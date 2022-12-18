@@ -15,7 +15,7 @@ on:
         default: demo
 
 jobs:
-  print_hello:
+  build_conda_image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
