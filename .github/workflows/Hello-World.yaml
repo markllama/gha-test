@@ -1,0 +1,26 @@
+---
+#
+# Demonstrate a workflow execution
+#
+name: Hello World
+on:
+  workflow_dispatch:
+    # Workflow Dispatch inputs.  Provide them in CLI or in Web UI workflow dispatch trigger
+    # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
+    inputs:
+      greeting:
+        description: How to greet the world
+        required: true
+        default: 'Hello World'
+
+jobs:
+  print_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: |
+          echo ${{ inputs.greeting }}
+
+# restrict this script to do nothing, Relax this for your tests
+# SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
+permissions: {}
