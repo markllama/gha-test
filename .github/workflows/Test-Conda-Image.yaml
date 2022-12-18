@@ -26,7 +26,7 @@ jobs:
           echo ${{ inputs.greeting }}
 
       - name: Build a conda image
-        uses: markllama/action-conda-image@${{ inputs.action_version }}
+        uses: markllama/action-conda-image@demo
           
       
 
