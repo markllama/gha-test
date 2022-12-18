@@ -11,7 +11,8 @@ on:
 
       action_version:
         description: The git ref to an action to run
-        required: true
+        required: false
+        default: demo
 
 jobs:
   print_hello:
