@@ -32,6 +32,8 @@ jobs:
           image-name: test-conda-build
           image-tag: py3.10
 
+          conda-python: 3.10
+
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
 #permissions: { }
