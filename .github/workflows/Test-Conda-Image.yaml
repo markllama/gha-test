@@ -13,14 +13,23 @@ on:
         required: true
         default: 'Hello World'
 
+      action_version:
+        description: The git ref to an action to run
+        required: true
+
 jobs:
   print_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
+      - name: Print Hello Conda
         run: |
           echo ${{ inputs.greeting }}
 
+      - name: Build a conda image
+        uses: markllama/action-conda-image@${{ inputs.action_version }}
+          
+      
+
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
-permissions: {}
+#permissions: { }
