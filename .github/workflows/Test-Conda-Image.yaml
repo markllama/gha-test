@@ -30,7 +30,8 @@ jobs:
 
       - name: Build a conda image
         uses: markllama/action-conda-image@demo
-          
+          with:
+            greeting: ${{ inputs.greeting }}
       
 
 # restrict this script to do nothing, Relax this for your tests
