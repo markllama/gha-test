@@ -26,7 +26,7 @@ jobs:
         with:
           registry-username: markllama
           registry-password: foo
-          image-name: bar
+          image-name: test-conda-build
           image-tag: gronk
 
 # restrict this script to do nothing, Relax this for your tests
