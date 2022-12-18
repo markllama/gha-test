@@ -35,12 +35,6 @@ jobs:
           registry-password: foo
           image-name: bar
           image-tag: gronk
-          greeting: ${{ inputs.greeting }}
-
-      - name: Install podman and buildah
-        run: |
-          sudo apt-get install -y podman buildah && \
-          sudo rm -rf /var/lib/apt/lists/*
 
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
