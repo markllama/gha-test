@@ -30,12 +30,12 @@ jobs:
 
       - name: Build a conda image
         uses: markllama/action-conda-image@demo
-          with:
-            registry-username: markllama
-            registry-password: foo
-            image-name: bar
-            image-tag: gronk
-            greeting: ${{ inputs.greeting }}
+        with:
+          registry-username: markllama
+          registry-password: foo
+          image-name: bar
+          image-tag: gronk
+          greeting: ${{ inputs.greeting }}
 
       - name: Install podman and buildah
         run: |
