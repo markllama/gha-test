@@ -8,10 +8,6 @@ on:
     # Workflow Dispatch inputs.  Provide them in CLI or in Web UI workflow dispatch trigger
     # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs
     inputs:
-      greeting:
-        description: How to greet the world
-        required: true
-        default: 'Hello World'
 
       action_version:
         description: The git ref to an action to run
@@ -23,10 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Print Hello Conda
-        run: |
-          echo ${{ inputs.greeting }}
 
       - name: Build a conda image
         uses: markllama/action-conda-image@demo
