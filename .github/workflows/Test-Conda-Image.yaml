@@ -31,8 +31,16 @@ jobs:
       - name: Build a conda image
         uses: markllama/action-conda-image@demo
           with:
+            registry-username: markllama
+            registry-password: foo
+            image-name: bar
+            image-tag: gronk
             greeting: ${{ inputs.greeting }}
-      
+
+      - name: Install podman and buildah
+        run: |
+          apt install -y podman buildah && \
+          rm -rf /var/lib/apt/lists/*
 
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
