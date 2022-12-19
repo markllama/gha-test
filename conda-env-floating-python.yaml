@@ -5,5 +5,5 @@ channels:
   - https://conda.anaconda.org/pytorch
 
 dependancies:
-  - python >=3.10
+  - python
   - pip
