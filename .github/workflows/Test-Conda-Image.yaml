@@ -11,8 +11,11 @@ on:
 
       action_version:
         description: The git ref to an action to run
-        required: false
         default: demo
+
+      conda_python:
+        description: Which version of python to use
+        default: "3.10"
 
 jobs:
   build_conda_image:
@@ -30,9 +33,9 @@ jobs:
           registry-password: ${{ secrets.GHCR_TOKEN }}
           
           image-name: test-conda-build
-          image-tag: py3.10
+          image-tag: "py${{ inputs.conda_python }}"
 
-          conda-python: "3.10"
+          conda-python: "${{ inputs.conda_python }}"
 
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
