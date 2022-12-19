@@ -4,6 +4,6 @@ name: gha-test
 channels:
   - https://conda.anaconda.org/pytorch
 
-dependancies:
+dependencies:
   - python >=3.10
   - pip
