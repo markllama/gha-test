@@ -52,7 +52,7 @@ jobs:
 
           conda-python: "${{ inputs.conda_python }}"
 
-          conda_env: "${{ inputs.conda_env }}"
+          conda-env: "${{ inputs.conda_env }}"
 
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
