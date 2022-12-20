@@ -17,9 +17,19 @@ on:
         description: Which version of python to use
         default: "3.10"
 
+      conda_env:
+        description: Select an env file to test
+        type: choice
+        options:
+          - "conda-env.yaml"
+          - "conda-env-floating-python.yaml"
+          - "conda-env-no-python.yaml"
+        default: "conda-env.yaml"
+          
       force_build:
         description: Force a build even if it exists
         default: false
+
 
 jobs:
   build_conda_image:
@@ -36,11 +46,13 @@ jobs:
           registry-username: ${{ github.actor }}
           registry-password: ${{ secrets.GHCR_TOKEN }}
           
-          image-name: test-conda-build
+          #image-name: test-conda-build
           image-tag: "py${{ inputs.conda_python }}"
           force-build: "${{ inputs.force_build }}"
 
           conda-python: "${{ inputs.conda_python }}"
+
+          conda_env: "${{ inputs.conda_env }}"
 
 # restrict this script to do nothing, Relax this for your tests
 # SEE: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
