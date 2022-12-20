@@ -17,6 +17,10 @@ on:
         description: Which version of python to use
         default: "3.10"
 
+      force_build:
+        description: Force a build even if it exists
+        default: false
+
 jobs:
   build_conda_image:
     runs-on: ubuntu-latest
@@ -34,6 +38,7 @@ jobs:
           
           image-name: test-conda-build
           image-tag: "py${{ inputs.conda_python }}"
+          force-build: "${{ inputs.force_build }}"
 
           conda-python: "${{ inputs.conda_python }}"
 
