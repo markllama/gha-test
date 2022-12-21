@@ -1,0 +1,33 @@
+---
+#
+# Build a software container and push it to a provided repository
+#
+name: Build and Store Container Image
+on:
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: The path to a repository to receive the container image
+        required: true
+
+      repo_ref:
+        description: 'Specify a tag, branch or commit to apply the template to'
+        required: false
+        default: ''
+
+
+jobs:
+  build_package:
+    name: Build the package locally
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone the working repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.REPO_REF }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+    
+
